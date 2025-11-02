@@ -12,6 +12,7 @@
 <body>
     <div class="card" role="main">
         <h1>Test your typing skills!!!</h1>
+        <h3>With the option for time practice</h3>
 
         <div class="meta">
             <div class="stat">Time: <span id="time-display">0.0s</span></div>
@@ -24,15 +25,19 @@
         <div class="text-area" id="target" aria-live="polite"></div>
 
         <div class="controls">
-            <button id="new-text">New Text</button>
             <button id="start-btn">Start</button>
             <button id="reset-btn" class="secondary">Restart</button>
             <label class="small" style="margin-left:auto;">
-                Mode:
-                <select id="mode">
-                    <option value="paragraph">Paragraph</option>
-                    <option value="time">Time Test (1 minute)</option>
-                    <option value="time 2">Time Test (5 minutes)</option>
+                Passage + Time:
+                <select id="select-passage">
+
+                    <option value="time">Golden Dusk (30 seconds)</option>
+                    <option value="time">The Rhythm of Typing (30 seconds)</option>
+                    <option value="time">Whispers Between the Shelves (1 minute)</option>
+                    <option value="time">The Spark of Curiosity (1 minute)</option>
+                    <option value="time">Echoes in the Forest (2 minutes)</option>
+                    <option value="time">City Morning Symphony (2 minutes)</option>
+                    <option value="time">Stargazers Solitude (3 minutes)</option>
                 </select>
             </label>
         </div>
@@ -46,7 +51,7 @@
         <div class="footer-row">
             <div class="small">Tip: Use backspace to correct mistakes. Accuracy updates live.</div>
             <div class="result">
-                <div>Final WPM: <span id="final-wpm">—</span></div>
+                <div>Final WPM (words per minute): <span id="final-wpm">—</span></div>
                 <div>Final Accuracy: <span id="final-acc">—</span></div>
             </div>
         </div>
