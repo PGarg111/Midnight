@@ -4,58 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClickyKeys</title>
+    <title>My Personal Reading Log</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="Screenshot_2025-11-02_at_10.21.25_AM-removebg-preview.png" type="image/jpg">
 </head>
 
 <body>
-    <div class="card" role="main">
-        <h1>Test your typing skills!!!</h1>
-        <h3>With the option for time practice</h3>
-
-        <div class="meta">
-            <div class="stat">Time: <span id="time-display">0.0s</span></div>
-            <div class="stat">WPM: <span id="wpm">0</span></div>
-            <div class="stat">Accuracy: <span id="accuracy">100%</span></div>
-            <div class="stat">Keystrokes: <span id="keystrokes">0</span></div>
-            <div class="stat">Best WPM: <span id="best-wpm">—</span></div>
-        </div>
-
-        <div class="text-area" id="target" aria-live="polite"></div>
-
-        <div class="controls">
-            <button id="start-btn">Start</button>
-            <button id="reset-btn" class="secondary">Restart</button>
-            <label class="small" style="margin-left:auto;">
-                Passage + Time:
-                <select id="select-passage">
-
-                    <option value="time">Golden Dusk (30 seconds)</option>
-                    <option value="time">The Rhythm of Typing (30 seconds)</option>
-                    <option value="time">Whispers Between the Shelves (1 minute)</option>
-                    <option value="time">The Spark of Curiosity (1 minute)</option>
-                    <option value="time">Echoes in the Forest (2 minutes)</option>
-                    <option value="time">City Morning Symphony (2 minutes)</option>
-                    <option value="time">Stargazers Solitude (3 minutes)</option>
-                </select>
-            </label>
-        </div>
-
-        <div class="input-row">
-            <input id="typed" placeholder="Click Start, then type here..." autocomplete="off" autocorrect="off"
-                autocapitalize="off" spellcheck="false" />
-            <button id="finish" class="secondary">Finish</button>
-        </div>
-
-        <div class="footer-row">
-            <div class="small">Tip: Use backspace to correct mistakes. Accuracy updates live.</div>
-            <div class="result">
-                <div>Final WPM (words per minute): <span id="final-wpm">—</span></div>
-                <div>Final Accuracy: <span id="final-acc">—</span></div>
-            </div>
-        </div>
+    <div>
+        <button onclick="toggleTheme()">🌓</button>
     </div>
+    <div class="card" role="main">
+        <h1>My Reading Tracker</h1>
+
+        <form id="book-form">
+            <input type="text" id="title" placeholder="Book Title" required />
+            <input type="text" id="author" placeholder="Author" required />
+            <select id="status">
+                <option value="Reading">Reading</option>
+                <option value="Finished">Finished</option>
+                <option value="To Read">To Read</option>
+            </select>
+            <button type="submit">Add Book</button>
+        </form>
+
+        <h2>Your Books</h2>
+        <ul id="book-list"></ul>
+    </div>
+
 
     <script src="script.js"></script>
 </body>
