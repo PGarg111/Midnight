@@ -27,7 +27,7 @@ const accDisplay = document.getElementById("accuracy");
 const finalWpm = document.getElementById("final-wpm");
 const finalAcc = document.getElementById("final-acc");
 
-let time;
+let timer;
 let timeLeft = 0;
 let startTime;
 let passageText = "";
@@ -71,8 +71,11 @@ function startTimer() {
         const remaining = timeLeft - elapsed;
         timeDisplay.textContent = `${remaining}s`;
 
-        
-    })
+        if(remaining <= 0) {
+            clearInterval(timer);
+            endTest();
+        }
+    }, 1000);
 }
 
 
