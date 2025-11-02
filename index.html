@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClickyKeys</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="Screenshot_2025-11-02_at_10.21.25_AM-removebg-preview.png" type="image/jpg">
+</head>
+
+<body>
+    <div class="card" role="main">
+        <h1>Test your typing skills!!!</h1>
+
+        <div class="meta">
+            <div class="stat">Time: <span id="time-display">0.0s</span></div>
+            <div class="stat">WPM: <span id="wpm">0</span></div>
+            <div class="stat">Accuracy: <span id="accuracy">100%</span></div>
+            <div class="stat">Keystrokes: <span id="keystrokes">0</span></div>
+            <div class="stat">Best WPM: <span id="best-wpm">—</span></div>
+        </div>
+
+        <div class="text-area" id="target" aria-live="polite"></div>
+
+        <div class="controls">
+            <button id="new-text">New Text</button>
+            <button id="start-btn">Start</button>
+            <button id="reset-btn" class="secondary">Reset</button>
+            <label class="small" style="margin-left:auto;">
+                Mode:
+                <select id="mode">
+                    <option value="paragraph">Paragraph</option>
+                    <option value="time">Time Test (60s)</option>
+                </select>
+            </label>
+        </div>
+
+        <div class="input-row">
+            <input id="typed" placeholder="Click Start, then type here..." autocomplete="off" autocorrect="off"
+                autocapitalize="off" spellcheck="false" />
+            <button id="finish" class="secondary">Finish</button>
+        </div>
+
+        <div class="footer-row">
+            <div class="small">Tip: Use backspace to correct mistakes. Accuracy updates live.</div>
+            <div class="result">
+                <div>Final WPM: <span id="final-wpm">—</span></div>
+                <div>Final Accuracy: <span id="final-acc">—</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <script>
+        var name = "Hi";
+        if(name == "Hi") {
+            alert("HI");
+            alert("hi");
+        }
+        function greeting(name){
+            return `Hello ${name}, hi`;
+
+        }
+        const greet = greeting("Hi");
+        console.log("Hiiiii");
+        console.warn("This is a warning");
+        console.error("This is an error");
+    </script>  -->
+</body>
+
+</html>
