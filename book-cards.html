@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novel Notes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="Screenshot_2025-11-02_at_10.21.25_AM-removebg-preview.png" type="image/jpg">
+</head>
+
+<body>
+    <div class="topbar">
+        <a href="book-cards.html">Explore Books</a>
+        <a href="index.html">Home</a>
+        <a href="my-saved-books.html">My Saved Books</a>
+
+    </div>
+
+    <nav class="toc">
+        <button onclick="showGenre('fantasy')">Fantasy</button>
+        <button onclick="showGenre('hist-fic')">Historical Fiction</button>
+        <button onclick="showGenre('horror-thriller')">Horror/Thriller</button>
+        <button onclick="showGenre('mystery')">Mystery</button>
+        <button onclick="showGenre('non-fic')">Non-Fiction</button>
+        <button onclick="showGenre('real')">Realistic Fiction</button>
+        <button onclick="showGenre('romance')">Romance</button>
+        <button onclick="showGenre('sci-fi')">Science Fiction/Dystopian</button>
+    </nav>
+
+    <button onclick="toggleTheme()">🌓</button>
+    <h1>Book Cards</h1>
+
+    <main>
+        <section id="start" class="genre">
+            <h3>Explore different books by genre and add ones that appeal to you to your need-to-read-list and keep
+                track of them.
+            </h3>
+        </section>
+        <section id="fantasy" class="genre hidden">
+            <p>Fantasy Cards</p>
+        </section>
+        <section id="horror-thriller" class="genre hidden">
+            <p>Horror/Thriller Cards</p>
+        </section>
+        <section id="hist-fic" class="genre hidden">
+            <p>Historical Fiction Cards</p>
+        </section>
+        <section id="mystery" class="genre hidden">
+            <p>Mystery Cards</p>
+        </section>
+        <section id="non-fic" class="genre hidden">
+            <p>Non Fic Cards</p>
+        </section>
+        <section id="real" class="genre hidden">
+            <p>Realistic Fiction cards</p>
+        </section>
+        </section>
+        <section id="romance" class="genre hidden">
+            <p>Romance Cards</p>
+        </section>
+        </section>
+        <section id="sci-fi" class="genre hidden">
+            <p>Sci Fi cards</p>
+        </section>
+
+    </main>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        function showGenre(genreID) {
+            document.querySelectorAll('.genre').forEach(c => c.classList.add('hidden'));
+
+            const genre = document.getElementById(genreID);
+            genre.classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: "auto" });
+        }
+    </script>
+
+
+</body>
+
+</html>
