@@ -11,13 +11,13 @@
 
 <body>
     <div class="topbar">
-        <a href="book-cards.html">Explore Books</a>
+        <a href="book-cards.html">Book Gallery</a>
         <a href="index.html">Home</a>
-        <a href="my-saved-books.html">My Saved Books</a>
+        <a href="my-saved-books.html">Saved Books</a>
 
     </div>
 
-    <nav class="toc">
+    <nav class="toc"> 
         <button onclick="showGenre('fantasy')">Fantasy</button>
         <button onclick="showGenre('hist-fic')">Historical Fiction</button>
         <button onclick="showGenre('horror-thriller')">Horror/Thriller</button>
@@ -32,6 +32,7 @@
     <h1>Book Cards</h1>
 
     <main>
+        
         <section id="start" class="genre">
             <h3>Explore different books by genre and add ones that appeal to you to your need-to-read-list and keep
                 track of them.
@@ -39,6 +40,7 @@
         </section>
         <section id="fantasy" class="genre hidden">
             <p>Fantasy Cards</p>
+            
         </section>
         <section id="horror-thriller" class="genre hidden">
             <p>Horror/Thriller Cards</p>
@@ -66,19 +68,7 @@
 
     </main>
 
-    <script>
-        function toggleTheme() {
-            document.body.classList.toggle('dark-mode');
-        }
-
-        function showGenre(genreID) {
-            document.querySelectorAll('.genre').forEach(c => c.classList.add('hidden'));
-
-            const genre = document.getElementById(genreID);
-            genre.classList.remove('hidden');
-            window.scrollTo({ top: 0, behavior: "auto" });
-        }
-    </script>
+    <script src="script.js"></script>
 
 
 </body>
