@@ -17,7 +17,7 @@
 
     </div>
 
-    <nav class="toc"> 
+    <nav class="toc">
         <button onclick="showGenre('fantasy')">Fantasy</button>
         <button onclick="showGenre('hist-fic')">Historical Fiction</button>
         <button onclick="showGenre('horror-thriller')">Horror/Thriller</button>
@@ -28,11 +28,13 @@
         <button onclick="showGenre('sci-fi')">Science Fiction/Dystopian</button>
     </nav>
 
-    <button onclick="toggleTheme()">🌓</button>
+    <div>
+        <button onclick="toggleTheme()">🌓</button>
+    </div>
     <h1>Book Cards</h1>
 
     <main>
-        
+
         <section id="start" class="genre">
             <h3>Explore different books by genre and add ones that appeal to you to your need-to-read-list and keep
                 track of them.
@@ -40,7 +42,7 @@
         </section>
         <section id="fantasy" class="genre hidden">
             <p>Fantasy Cards</p>
-            
+
         </section>
         <section id="horror-thriller" class="genre hidden">
             <p>Horror/Thriller Cards</p>
@@ -68,6 +70,15 @@
 
     </main>
 
+    <template id="book-card-template">
+        <div class="book-card">
+            <h3 class="title"></h3>
+            <p class="author"></p>
+            <p class="genre"></p>
+            <button class="add-btn">Add to My List</button>
+        </div>
+    </template>
+    
     <script src="script.js"></script>
 
 
