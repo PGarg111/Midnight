@@ -1,8 +1,14 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import HTMLResponse
+from fastapi.requests import Request
+from fastapi.templating import Jinja2Templates
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from typing import List
 
 app = FastAPI()
+templates = Jinja2Templates(directory="templates")
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 class Book(BaseModel):
     id: int | None = None
@@ -15,6 +21,14 @@ books: List[Book] = [
 ]
 
 next_id = 3
+
+@app.get("/", response_class=HTMLResponse)
+def home(request: Request):
+    return templates.TemplateResponse("index.html", {"request": request})
+
+@app.get("/book-cards.html", response_class=HTMLResponse)
+def about(request: Request):
+    return templates.TemplateResponse("book-cards.html", {"request": request})
 
 @app.get("/books", response_model=List[Book])
 def list_books():
