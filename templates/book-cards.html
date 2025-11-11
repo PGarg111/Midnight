@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Novel Notes</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="static/style.css">
     <link rel="shortcut icon" href="Screenshot_2025-11-02_at_10.21.25_AM-removebg-preview.png" type="image/jpg">
 </head>
 
@@ -67,19 +67,28 @@
         <section id="sci-fi" class="genre hidden">
             <p>Sci Fi cards</p>
         </section>
-
+        <p id="jsonid"></p>
+        <button id="load">Load Books</button>
     </main>
+    <script>
+        document.getElementById("load").onclick = async () => {
+            const res = await fetch("http://127.0.0.1:8001/books");
+            document.getElementById("jsonid").innerHTML = res;
+        }
+    </script>
 
-    <template id="book-card-template">
+
+
+    <!-- <template id="book-card-template">
         <div class="book-card">
             <h3 class="title"></h3>
             <p class="author"></p>
             <p class="genre"></p>
             <button class="add-btn">Add to My List</button>
         </div>
-    </template>
-    
-    <script src="script.js"></script>
+    </template> -->
+
+    <script src="static/script.js"></script>
 
 
 </body>
